@@ -118,11 +118,17 @@ result. Negative ([04](04-evaluation.md) § Follow-up).
 `compare-train` runs the same comparison on training-family layouts (40 scenarios), to check
 whether the null result is a generalisation problem. It isn't ([04](04-evaluation.md)).
 
+### 14. The remote predictor is served by its own service, not project 01's gateway
+
+SPEC.md suggests serving the predictor "through project 1". Project 01's gateway proxies OpenAI
+chat completions to an LLM server; a numpy MLP doesn't fit that interface. `predictor/serve.py` is
+a standard-library HTTP service instead, with the fault injection (latency, seeded drops) built in.
+What the extension tests, budgets, fallback and circuit breaking, is unchanged by that.
+
 ## Deferred, not dropped
 
 | Item | Why deferred | Source |
 | --- | --- | --- |
-| Optional systems extension (remote predictor, latency, fallback) | Needs project 01's serving endpoint | PLAN.md Progress |
 | Fault-severity sweep | Not run; one fault mix per scenario (2 blocked segments, 1 failure) | README § Limitations |
 | More aggregation rounds | Round 1 gave no accuracy gain and worse throughput | README § Limitations |
 | Stronger MAPF for 100+ robots (PIBT or traffic lanes) | Named as the next step, not started | README § Scaling |

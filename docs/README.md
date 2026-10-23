@@ -39,8 +39,9 @@ saturated throughput significantly worse.
 ## Status
 
 **All six PLAN.md milestones done** (PLAN.md Progress, 2026-10-06), plus one follow-up round of
-on-policy data aggregation. The optional systems extension (serving the predictor remotely with
-injected latency and a fallback) is **not done**: it needs project 01's serving endpoint. The
+on-policy data aggregation. The optional systems extension was added on 2026-10-23: the predictor
+served over HTTP with injected latency and drops, and a deterministic fallback that is never
+unsafe (0 collisions) and degrades exactly to the heuristic when the service is down. The
 macOS path has not been run on a real Mac. See [06-roadmap.md](06-roadmap.md) for what would come
 next and [08-implementation-notes.md](08-implementation-notes.md) for the places where building it
 changed the plan, including a router replacement that forced every result to be redone.

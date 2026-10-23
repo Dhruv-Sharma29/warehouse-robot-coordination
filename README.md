@@ -172,6 +172,15 @@ uv run python -m runner.experiment compare --workers 8
 
 Memory and per-step details for a 16 GB Mac are in the portfolio's `RUN_ON_MAC_M4_16GB.md` guide.
 
+### Remote inference, with a fallback that can't make things unsafe
+
+`python -m runner.remote` serves the MLP over HTTP and injects faults (20 paired held-out runs,
+`results/summary/remote_inference.json`). A healthy service reproduces the local model exactly
+(420.15 jobs, +0.55 s per run in round trips). A service answering 250 ms late against a 100 ms
+budget degrades exactly to the tuned heuristic (419.55). With 20 % of connections dropped the
+planner mixes the two estimators batch by batch (38 % fallback) and averages 406.45, a lead rather
+than a result on 20 runs. Collisions: 0 in every condition.
+
 ## Limitations
 
 - Robots execute plans exactly: no stochastic delays, no localisation error, no physical dynamics.
@@ -179,8 +188,8 @@ Memory and per-step details for a 16 GB Mac are in the portfolio's `RUN_ON_MAC_M
   not real warehouses.
 - One round of on-policy data aggregation was tried (no gain; see above). More rounds were not.
 - One fault mix per scenario (2 blocked segments, 1 robot failure). Severity was not swept.
-- The optional systems extension (serving the predictor remotely with injected latency and a safe
-  fallback) is not done.
+- The remote-inference extension uses 20 paired runs; whether a lossy service's batch-by-batch mix
+  of estimators costs throughput (−13.7 jobs, CI [−28.6, 1.2]) is not settled.
 
 ## Docs
 

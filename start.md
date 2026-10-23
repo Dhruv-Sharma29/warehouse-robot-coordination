@@ -78,6 +78,7 @@ uv run python -m runner.experiment compare-train    # 40 training-family scenari
 uv run python -m predictor.aggregate --round 1      # on-policy round             -> results/data_r1/, models/mlp_r1.json
 uv run python -m runner.experiment compare-aggregated
 uv run python -m runner.experiment scaling          # 20/50/100 robots, XL layout -> summary/scaling.json
+uv run python -m runner.remote                      # local vs remote MLP, faults -> summary/remote_inference.json (~4 min, ports 18080-18082)
 ```
 
 `runner.experiment` and `predictor.aggregate` default to `--workers 10`, `predictor.dataset` to

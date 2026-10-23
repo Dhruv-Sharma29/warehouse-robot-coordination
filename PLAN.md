@@ -16,7 +16,7 @@ Simulation study only — not a DeepFleet reproduction or a real-robot safety cl
 | M4 learned prediction | **Done.** Ridge + PyTorch MLP (3 seeds); −21% MAE, −36% congested MAE on held-out layouts |
 | M5 planner integration | **Done.** Learned cost in assignment and station choice; paired vs naive and tuned heuristic |
 | M6 generalisation + demo | **Done.** 80 held-out scenarios with faults; scaling 20→100 robots; side-by-side HTML replays |
-| Optional systems extension | Not done: needs project 01's serving endpoint |
+| Optional systems extension | **Done 2026-10-23.** Remote MLP with injected latency/drops and a deterministic fallback (`results/summary/remote_inference.json`) |
 
 **Result:** the learned predictor matches but doesn't significantly beat a tuned congestion
 heuristic in closed loop (see README). Follow-up done: one round of on-policy data aggregation. No
@@ -70,7 +70,7 @@ method for 100+ robots.
 ### M6 — Generalization + demo (1 week)
 - [x] Unseen layouts, higher load, urgent jobs, blocked aisles, failed robots.
 - [x] Side-by-side browser replay.
-- [ ] Optional: serve predictor via 01 gateway; inject latency/drops; deterministic fallback. (Not done: [docs/06](docs/06-roadmap.md).)
+- [x] Optional: serve predictor via 01 gateway; inject latency/drops; deterministic fallback. (Own HTTP service instead of 01's chat-completions gateway: `runner/remote.py`, docs/04.)
 
 ## Metrics
 Orders completed per interval · mean/p95 travel time · total path cost · collisions (must be 0) · deadlocks · urgent-job delay · planner compute time. Multiple seeds; report variability (e.g. mean ± CI over seeds).

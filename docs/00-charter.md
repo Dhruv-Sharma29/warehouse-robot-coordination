@@ -87,7 +87,7 @@ and a null result could be blamed on a dozen things; here it can't.
 | S8 | Paired closed-loop comparison on unseen layouts with intervals | `results/summary/compare_heldout.json`, 80 scenarios | Met |
 | S9 | Scaling to ~100 robots with planner time recorded | `results/summary/scaling.json` | Met, with gridlock at 100 reported |
 | S10 | Side-by-side visualisation | `results/replay/*.html` | Met |
-| S11 | Optional: remote inference with injected latency and a safe fallback | — | Not done (needs project 01's serving endpoint) |
+| S11 | Optional: remote inference with injected latency and a safe fallback | `runner/remote.py` → `results/summary/remote_inference.json`; `tests/test_remote.py` | Met (own HTTP service; project 01's gateway serves only chat completions) |
 
 `uv run pytest` runs 15 tests; all pass.
 
