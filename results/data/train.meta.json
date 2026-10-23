@@ -1,0 +1,29 @@
+{
+ "split": "train",
+ "n": 106769,
+ "families": [
+  "std-6x4",
+  "std-8x6"
+ ],
+ "seeds": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6
+ ],
+ "features": [
+  "dist",
+  "robots_on_path",
+  "robots_on_path_per_cell",
+  "robots_near_start",
+  "robots_near_goal",
+  "heading_near_goal",
+  "heading_to_goal",
+  "goal_is_station",
+  "narrow_frac",
+  "turns",
+  "fleet_density"
+ ]
+}

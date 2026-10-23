@@ -1,0 +1,36 @@
+{
+ "round": 1,
+ "trained_on_rounds": [
+  0,
+  1
+ ],
+ "n_train": 223590,
+ "selected_seed": 2,
+ "heldout_onpolicy_trips": 74277,
+ "accuracy_on_learned_policy_trips": {
+  "distance": {
+   "mae": 4.29,
+   "mae_to_pickup": 2.68,
+   "mae_to_station": 5.95,
+   "mae_congested": 16.01,
+   "congested_share": 0.206,
+   "rank_corr_excess": 0.269
+  },
+  "mlp": {
+   "mae": 3.63,
+   "mae_to_pickup": 2.4,
+   "mae_to_station": 4.89,
+   "mae_congested": 10.05,
+   "congested_share": 0.206,
+   "rank_corr_excess": 0.542
+  },
+  "mlp_r1": {
+   "mae": 3.61,
+   "mae_to_pickup": 2.41,
+   "mae_to_station": 4.84,
+   "mae_congested": 9.99,
+   "congested_share": 0.206,
+   "rank_corr_excess": 0.556
+  }
+ }
+}

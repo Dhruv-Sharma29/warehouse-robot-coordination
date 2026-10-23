@@ -1,0 +1,6 @@
+round 1 train: 116821 trips collected with mlp
+round 1 val: 38690 trips collected with mlp
+round 1 heldout: 74277 trips collected with mlp
+distance MAE   4.29 congested  16.01 rank-corr 0.269
+mlp      MAE   3.63 congested  10.05 rank-corr 0.542
+mlp_r1   MAE   3.61 congested   9.99 rank-corr 0.556

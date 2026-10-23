@@ -1,0 +1,652 @@
+{
+ "label": "heldout",
+ "scenarios": 80,
+ "heuristic_params": {
+  "per_robot": 4.0,
+  "per_queued": 3.0
+ },
+ "by_regime": {
+  "moderate": {
+   "distance": {
+    "mean": {
+     "jobs_completed": 261.12,
+     "cycle_mean": 28.72,
+     "cycle_p95": 55.6,
+     "urgent_missed": 8.43,
+     "moves": 9775.83,
+     "safety_interventions": 1319.4,
+     "stuck_episodes": 25.43,
+     "planner_s": 0.88
+    },
+    "vs_distance": null
+   },
+   "heuristic": {
+    "mean": {
+     "jobs_completed": 301.9,
+     "cycle_mean": 36.2,
+     "cycle_p95": 79.2,
+     "urgent_missed": 5.4,
+     "moves": 11300.92,
+     "safety_interventions": 983.65,
+     "stuck_episodes": 20.55,
+     "planner_s": 0.71
+    },
+    "vs_distance": {
+     "jobs_completed": {
+      "n": 40,
+      "mean_diff": 40.77,
+      "ci95": [
+       16.65,
+       64.9
+      ],
+      "better": 21,
+      "worse": 13,
+      "ties": 6
+     },
+     "cycle_mean": {
+      "n": 40,
+      "mean_diff": 7.48,
+      "ci95": [
+       0.16,
+       14.79
+      ],
+      "better": 25,
+      "worse": 14,
+      "ties": 1
+     },
+     "cycle_p95": {
+      "n": 40,
+      "mean_diff": 23.6,
+      "ci95": [
+       -1.75,
+       48.95
+      ],
+      "better": 19,
+      "worse": 18,
+      "ties": 3
+     },
+     "urgent_missed": {
+      "n": 40,
+      "mean_diff": -3.02,
+      "ci95": [
+       -5.61,
+       -0.44
+      ],
+      "better": 4,
+      "worse": 11,
+      "ties": 25
+     },
+     "moves": {
+      "n": 40,
+      "mean_diff": 1525.1,
+      "ci95": [
+       701.81,
+       2348.39
+      ],
+      "better": 32,
+      "worse": 8,
+      "ties": 0
+     },
+     "safety_interventions": {
+      "n": 40,
+      "mean_diff": -335.75,
+      "ci95": [
+       -564.12,
+       -107.38
+      ],
+      "better": 11,
+      "worse": 26,
+      "ties": 3
+     },
+     "stuck_episodes": {
+      "n": 40,
+      "mean_diff": -4.88,
+      "ci95": [
+       -11.75,
+       2.0
+      ],
+      "better": 15,
+      "worse": 19,
+      "ties": 6
+     },
+     "planner_s": {
+      "n": 40,
+      "mean_diff": -0.17,
+      "ci95": [
+       -0.27,
+       -0.06
+      ],
+      "better": 3,
+      "worse": 35,
+      "ties": 2
+     }
+    }
+   },
+   "learned-mlp": {
+    "mean": {
+     "jobs_completed": 296,
+     "cycle_mean": 37.07,
+     "cycle_p95": 82.6,
+     "urgent_missed": 5.7,
+     "moves": 11072.02,
+     "safety_interventions": 928.77,
+     "stuck_episodes": 22.95,
+     "planner_s": 0.82
+    },
+    "vs_distance": {
+     "jobs_completed": {
+      "n": 40,
+      "mean_diff": 34.88,
+      "ci95": [
+       13.25,
+       56.5
+      ],
+      "better": 22,
+      "worse": 6,
+      "ties": 12
+     },
+     "cycle_mean": {
+      "n": 40,
+      "mean_diff": 8.35,
+      "ci95": [
+       1.25,
+       15.45
+      ],
+      "better": 22,
+      "worse": 17,
+      "ties": 1
+     },
+     "cycle_p95": {
+      "n": 40,
+      "mean_diff": 27,
+      "ci95": [
+       2.55,
+       51.45
+      ],
+      "better": 21,
+      "worse": 15,
+      "ties": 4
+     },
+     "urgent_missed": {
+      "n": 40,
+      "mean_diff": -2.73,
+      "ci95": [
+       -4.5,
+       -0.95
+      ],
+      "better": 3,
+      "worse": 12,
+      "ties": 25
+     },
+     "moves": {
+      "n": 40,
+      "mean_diff": 1296.2,
+      "ci95": [
+       514.51,
+       2077.89
+      ],
+      "better": 27,
+      "worse": 13,
+      "ties": 0
+     },
+     "safety_interventions": {
+      "n": 40,
+      "mean_diff": -390.62,
+      "ci95": [
+       -658.68,
+       -122.57
+      ],
+      "better": 13,
+      "worse": 25,
+      "ties": 2
+     },
+     "stuck_episodes": {
+      "n": 40,
+      "mean_diff": -2.48,
+      "ci95": [
+       -8.47,
+       3.52
+      ],
+      "better": 15,
+      "worse": 19,
+      "ties": 6
+     },
+     "planner_s": {
+      "n": 40,
+      "mean_diff": -0.06,
+      "ci95": [
+       -0.19,
+       0.07
+      ],
+      "better": 15,
+      "worse": 19,
+      "ties": 6
+     }
+    }
+   },
+   "learned-ridge": {
+    "mean": {
+     "jobs_completed": 280.5,
+     "cycle_mean": 35.17,
+     "cycle_p95": 79.47,
+     "urgent_missed": 6.9,
+     "moves": 10344.02,
+     "safety_interventions": 1206.9,
+     "stuck_episodes": 24,
+     "planner_s": 0.81
+    },
+    "vs_distance": {
+     "jobs_completed": {
+      "n": 40,
+      "mean_diff": 19.38,
+      "ci95": [
+       -3.91,
+       42.66
+      ],
+      "better": 23,
+      "worse": 11,
+      "ties": 6
+     },
+     "cycle_mean": {
+      "n": 40,
+      "mean_diff": 6.45,
+      "ci95": [
+       0.16,
+       12.74
+      ],
+      "better": 24,
+      "worse": 14,
+      "ties": 2
+     },
+     "cycle_p95": {
+      "n": 40,
+      "mean_diff": 23.88,
+      "ci95": [
+       -1.2,
+       48.95
+      ],
+      "better": 22,
+      "worse": 14,
+      "ties": 4
+     },
+     "urgent_missed": {
+      "n": 40,
+      "mean_diff": -1.52,
+      "ci95": [
+       -3.28,
+       0.23
+      ],
+      "better": 5,
+      "worse": 12,
+      "ties": 23
+     },
+     "moves": {
+      "n": 40,
+      "mean_diff": 568.2,
+      "ci95": [
+       -163.86,
+       1300.26
+      ],
+      "better": 23,
+      "worse": 16,
+      "ties": 1
+     },
+     "safety_interventions": {
+      "n": 40,
+      "mean_diff": -112.5,
+      "ci95": [
+       -313.25,
+       88.25
+      ],
+      "better": 17,
+      "worse": 20,
+      "ties": 3
+     },
+     "stuck_episodes": {
+      "n": 40,
+      "mean_diff": -1.43,
+      "ci95": [
+       -5.98,
+       3.13
+      ],
+      "better": 15,
+      "worse": 19,
+      "ties": 6
+     },
+     "planner_s": {
+      "n": 40,
+      "mean_diff": -0.06,
+      "ci95": [
+       -0.2,
+       0.07
+      ],
+      "better": 12,
+      "worse": 26,
+      "ties": 2
+     }
+    }
+   }
+  },
+  "saturated": {
+   "distance": {
+    "mean": {
+     "jobs_completed": 330.18,
+     "cycle_mean": 110.36,
+     "cycle_p95": 248.78,
+     "urgent_missed": 30.62,
+     "moves": 12392.45,
+     "safety_interventions": 1976.1,
+     "stuck_episodes": 44.12,
+     "planner_s": 1.23
+    },
+    "vs_distance": null
+   },
+   "heuristic": {
+    "mean": {
+     "jobs_completed": 477.73,
+     "cycle_mean": 137.75,
+     "cycle_p95": 325.07,
+     "urgent_missed": 14.35,
+     "moves": 17709.75,
+     "safety_interventions": 1171.8,
+     "stuck_episodes": 29.55,
+     "planner_s": 1.11
+    },
+    "vs_distance": {
+     "jobs_completed": {
+      "n": 40,
+      "mean_diff": 147.55,
+      "ci95": [
+       83.54,
+       211.56
+      ],
+      "better": 34,
+      "worse": 6,
+      "ties": 0
+     },
+     "cycle_mean": {
+      "n": 40,
+      "mean_diff": 27.39,
+      "ci95": [
+       10.63,
+       44.16
+      ],
+      "better": 24,
+      "worse": 16,
+      "ties": 0
+     },
+     "cycle_p95": {
+      "n": 40,
+      "mean_diff": 76.3,
+      "ci95": [
+       33.02,
+       119.58
+      ],
+      "better": 25,
+      "worse": 15,
+      "ties": 0
+     },
+     "urgent_missed": {
+      "n": 40,
+      "mean_diff": -16.27,
+      "ci95": [
+       -23.4,
+       -9.15
+      ],
+      "better": 6,
+      "worse": 25,
+      "ties": 9
+     },
+     "moves": {
+      "n": 40,
+      "mean_diff": 5317.3,
+      "ci95": [
+       3099.11,
+       7535.49
+      ],
+      "better": 34,
+      "worse": 6,
+      "ties": 0
+     },
+     "safety_interventions": {
+      "n": 40,
+      "mean_diff": -804.3,
+      "ci95": [
+       -1141.43,
+       -467.17
+      ],
+      "better": 6,
+      "worse": 34,
+      "ties": 0
+     },
+     "stuck_episodes": {
+      "n": 40,
+      "mean_diff": -14.57,
+      "ci95": [
+       -22.99,
+       -6.16
+      ],
+      "better": 11,
+      "worse": 27,
+      "ties": 2
+     },
+     "planner_s": {
+      "n": 40,
+      "mean_diff": -0.12,
+      "ci95": [
+       -0.22,
+       -0.02
+      ],
+      "better": 13,
+      "worse": 26,
+      "ties": 1
+     }
+    }
+   },
+   "learned-mlp": {
+    "mean": {
+     "jobs_completed": 453.75,
+     "cycle_mean": 140.52,
+     "cycle_p95": 341.82,
+     "urgent_missed": 12.7,
+     "moves": 17300.25,
+     "safety_interventions": 1221.15,
+     "stuck_episodes": 38.05,
+     "planner_s": 1.14
+    },
+    "vs_distance": {
+     "jobs_completed": {
+      "n": 40,
+      "mean_diff": 123.58,
+      "ci95": [
+       73.7,
+       173.45
+      ],
+      "better": 32,
+      "worse": 8,
+      "ties": 0
+     },
+     "cycle_mean": {
+      "n": 40,
+      "mean_diff": 30.16,
+      "ci95": [
+       15.58,
+       44.74
+      ],
+      "better": 29,
+      "worse": 11,
+      "ties": 0
+     },
+     "cycle_p95": {
+      "n": 40,
+      "mean_diff": 93.05,
+      "ci95": [
+       48.42,
+       137.68
+      ],
+      "better": 29,
+      "worse": 10,
+      "ties": 1
+     },
+     "urgent_missed": {
+      "n": 40,
+      "mean_diff": -17.93,
+      "ci95": [
+       -25.05,
+       -10.8
+      ],
+      "better": 5,
+      "worse": 27,
+      "ties": 8
+     },
+     "moves": {
+      "n": 40,
+      "mean_diff": 4907.8,
+      "ci95": [
+       3108.44,
+       6707.16
+      ],
+      "better": 33,
+      "worse": 7,
+      "ties": 0
+     },
+     "safety_interventions": {
+      "n": 40,
+      "mean_diff": -754.95,
+      "ci95": [
+       -1047.01,
+       -462.89
+      ],
+      "better": 8,
+      "worse": 31,
+      "ties": 1
+     },
+     "stuck_episodes": {
+      "n": 40,
+      "mean_diff": -6.08,
+      "ci95": [
+       -14.02,
+       1.87
+      ],
+      "better": 17,
+      "worse": 22,
+      "ties": 1
+     },
+     "planner_s": {
+      "n": 40,
+      "mean_diff": -0.09,
+      "ci95": [
+       -0.18,
+       -0.0
+      ],
+      "better": 12,
+      "worse": 28,
+      "ties": 0
+     }
+    }
+   },
+   "learned-ridge": {
+    "mean": {
+     "jobs_completed": 437.43,
+     "cycle_mean": 128.18,
+     "cycle_p95": 305.12,
+     "urgent_missed": 16.65,
+     "moves": 16154.92,
+     "safety_interventions": 1385.88,
+     "stuck_episodes": 33.83,
+     "planner_s": 1.1
+    },
+    "vs_distance": {
+     "jobs_completed": {
+      "n": 40,
+      "mean_diff": 107.25,
+      "ci95": [
+       40.17,
+       174.33
+      ],
+      "better": 28,
+      "worse": 12,
+      "ties": 0
+     },
+     "cycle_mean": {
+      "n": 40,
+      "mean_diff": 17.82,
+      "ci95": [
+       0.29,
+       35.36
+      ],
+      "better": 23,
+      "worse": 17,
+      "ties": 0
+     },
+     "cycle_p95": {
+      "n": 40,
+      "mean_diff": 56.35,
+      "ci95": [
+       9.77,
+       102.93
+      ],
+      "better": 23,
+      "worse": 17,
+      "ties": 0
+     },
+     "urgent_missed": {
+      "n": 40,
+      "mean_diff": -13.97,
+      "ci95": [
+       -21.96,
+       -5.99
+      ],
+      "better": 11,
+      "worse": 24,
+      "ties": 5
+     },
+     "moves": {
+      "n": 40,
+      "mean_diff": 3762.47,
+      "ci95": [
+       1456.28,
+       6068.67
+      ],
+      "better": 28,
+      "worse": 12,
+      "ties": 0
+     },
+     "safety_interventions": {
+      "n": 40,
+      "mean_diff": -590.23,
+      "ci95": [
+       -956.21,
+       -224.24
+      ],
+      "better": 13,
+      "worse": 27,
+      "ties": 0
+     },
+     "stuck_episodes": {
+      "n": 40,
+      "mean_diff": -10.3,
+      "ci95": [
+       -19.48,
+       -1.12
+      ],
+      "better": 13,
+      "worse": 25,
+      "ties": 2
+     },
+     "planner_s": {
+      "n": 40,
+      "mean_diff": -0.13,
+      "ci95": [
+       -0.22,
+       -0.05
+      ],
+      "better": 11,
+      "worse": 28,
+      "ties": 1
+     }
+    }
+   }
+  }
+ }
+}

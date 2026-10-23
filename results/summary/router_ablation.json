@@ -1,0 +1,15 @@
+{
+ "clear": {
+  "jobs_completed": 605.92,
+  "safety_interventions": 434.08,
+  "stuck_episodes": 29.92,
+  "planner_s": 1.08
+ },
+ "rolling": {
+  "jobs_completed": 748.5,
+  "safety_interventions": 0,
+  "stuck_episodes": 14.42,
+  "planner_s": 0.86
+ },
+ "runs_per_mode": 12
+}

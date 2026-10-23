@@ -1,0 +1,27 @@
+{
+ "split": "heldout",
+ "n": 47702,
+ "families": [
+  "long-7x8-2st",
+  "wide-10x5"
+ ],
+ "seeds": [
+  101,
+  102,
+  103,
+  104
+ ],
+ "features": [
+  "dist",
+  "robots_on_path",
+  "robots_on_path_per_cell",
+  "robots_near_start",
+  "robots_near_goal",
+  "heading_near_goal",
+  "heading_to_goal",
+  "goal_is_station",
+  "narrow_frac",
+  "turns",
+  "fleet_density"
+ ]
+}

@@ -1,0 +1,131 @@
+{
+ "n_train": 106769,
+ "distance_fit": {
+  "a": 1.003,
+  "b": 3.66
+ },
+ "distance": {
+  "val": {
+   "mae": 4.94,
+   "mae_to_pickup": 3.0,
+   "mae_to_station": 6.95,
+   "mae_congested": 20.61,
+   "congested_share": 0.196,
+   "rank_corr_excess": 0.015
+  },
+  "heldout": {
+   "mae": 5.71,
+   "mae_to_pickup": 3.39,
+   "mae_to_station": 8.13,
+   "mae_congested": 23.83,
+   "congested_share": 0.203,
+   "rank_corr_excess": 0.191
+  }
+ },
+ "distance-fit": {
+  "val": {
+   "mae": 5.73,
+   "mae_to_pickup": 4.27,
+   "mae_to_station": 7.25,
+   "mae_congested": 17.1,
+   "congested_share": 0.196,
+   "rank_corr_excess": 0.034
+  },
+  "heldout": {
+   "mae": 6.47,
+   "mae_to_pickup": 4.6,
+   "mae_to_station": 8.43,
+   "mae_congested": 20.26,
+   "congested_share": 0.203,
+   "rank_corr_excess": 0.072
+  }
+ },
+ "ridge": {
+  "val": {
+   "mae": 5.06,
+   "mae_to_pickup": 3.38,
+   "mae_to_station": 6.8,
+   "mae_congested": 13.67,
+   "congested_share": 0.196,
+   "rank_corr_excess": 0.435
+  },
+  "heldout": {
+   "mae": 5.77,
+   "mae_to_pickup": 3.52,
+   "mae_to_station": 8.12,
+   "mae_congested": 15.95,
+   "congested_share": 0.203,
+   "rank_corr_excess": 0.522
+  }
+ },
+ "mlp-seed0": {
+  "val": {
+   "mae": 3.85,
+   "mae_to_pickup": 2.61,
+   "mae_to_station": 5.13,
+   "mae_congested": 13.12,
+   "congested_share": 0.196,
+   "rank_corr_excess": 0.54
+  },
+  "heldout": {
+   "mae": 4.46,
+   "mae_to_pickup": 2.97,
+   "mae_to_station": 6.03,
+   "mae_congested": 15.5,
+   "congested_share": 0.203,
+   "rank_corr_excess": 0.562
+  },
+  "train": {
+   "best_val_mse_log": 0.07104205340147018,
+   "epochs": 60,
+   "best_epoch": 52
+  }
+ },
+ "mlp-seed1": {
+  "val": {
+   "mae": 3.91,
+   "mae_to_pickup": 2.65,
+   "mae_to_station": 5.22,
+   "mae_congested": 12.9,
+   "congested_share": 0.196,
+   "rank_corr_excess": 0.541
+  },
+  "heldout": {
+   "mae": 4.52,
+   "mae_to_pickup": 2.98,
+   "mae_to_station": 6.13,
+   "mae_congested": 15.08,
+   "congested_share": 0.203,
+   "rank_corr_excess": 0.572
+  },
+  "train": {
+   "best_val_mse_log": 0.07053876668214798,
+   "epochs": 60,
+   "best_epoch": 38
+  }
+ },
+ "mlp-seed2": {
+  "val": {
+   "mae": 3.86,
+   "mae_to_pickup": 2.6,
+   "mae_to_station": 5.16,
+   "mae_congested": 13.01,
+   "congested_share": 0.196,
+   "rank_corr_excess": 0.541
+  },
+  "heldout": {
+   "mae": 4.49,
+   "mae_to_pickup": 2.97,
+   "mae_to_station": 6.08,
+   "mae_congested": 15.35,
+   "congested_share": 0.203,
+   "rank_corr_excess": 0.554
+  },
+  "train": {
+   "best_val_mse_log": 0.07024787366390228,
+   "epochs": 60,
+   "best_epoch": 27
+  }
+ },
+ "selected_mlp_seed": 2
+}

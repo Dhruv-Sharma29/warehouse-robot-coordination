@@ -1,0 +1,29 @@
+{
+ "20": {
+  "jobs_completed": 358.33,
+  "safety_interventions": 0,
+  "stuck_episodes": 0,
+  "robots_stuck_at_end": 0,
+  "planner_s": 0.38,
+  "plan_ms_p95": 1.32,
+  "jobs_per_robot": 17.92
+ },
+ "50": {
+  "jobs_completed": 810.33,
+  "safety_interventions": 0,
+  "stuck_episodes": 1.33,
+  "robots_stuck_at_end": 0,
+  "planner_s": 1.34,
+  "plan_ms_p95": 5.51,
+  "jobs_per_robot": 16.21
+ },
+ "100": {
+  "jobs_completed": 1158.67,
+  "safety_interventions": 11.33,
+  "stuck_episodes": 141.67,
+  "robots_stuck_at_end": 29.33,
+  "planner_s": 2.4,
+  "plan_ms_p95": 9.97,
+  "jobs_per_robot": 11.59
+ }
+}
