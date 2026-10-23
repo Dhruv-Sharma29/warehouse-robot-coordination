@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fleet replay</title>
+<style>
+:root{--bg:#f7f7f5;--fg:#1f2328;--muted:#6b7280;--card:#fff;--line:#e5e7eb;--shelf:#cbd5e1;--wall:#94a3b8;--station:#f59e0b;--robot:#2563eb;--loaded:#059669;--failed:#dc2626;--block:#f87171}
+@media (prefers-color-scheme:dark){:root{--bg:#111318;--fg:#e5e7eb;--muted:#9ca3af;--card:#1a1d24;--line:#2a2f3a;--shelf:#3b4252;--wall:#4b5563;--station:#d97706;--robot:#60a5fa;--loaded:#34d399;--failed:#f87171;--block:#b91c1c}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,sans-serif;padding:16px}
+h1{font-size:17px;margin:0 0 4px}.sub{color:var(--muted);margin:0 0 12px}
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px}
+.panel h2{font-size:14px;margin:0 0 6px;display:flex;justify-content:space-between;gap:8px}
+canvas{width:100%;height:auto;display:block;image-rendering:pixelated}
+.stats{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-top:6px;font-variant-numeric:tabular-nums}
+.stats b{color:var(--fg)}
+.controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}
+button{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:6px 12px;font:inherit;cursor:pointer}
+input[type=range]{flex:1;min-width:160px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:12px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+</style></head><body>
+<h1>Warehouse fleet replay</h1><p class="sub" id="title"></p>
+<div class="controls"><button id="play">Pause</button>
+<label>speed <input id="speed" type="range" min="1" max="30" value="8"></label>
+<input id="scrub" type="range" min="0" value="0" aria-label="time step"><span id="t" style="font-variant-numeric:tabular-nums"></span></div>
+<div class="legend"><span><i class="sw" style="background:var(--robot)"></i>robot</span><span><i class="sw" style="background:var(--loaded)"></i>moved last step</span>
+<span><i class="sw" style="background:var(--station)"></i>station</span><span><i class="sw" style="background:var(--block)"></i>blocked aisle</span><span><i class="sw" style="background:var(--failed)"></i>failed robot</span></div>
+<div class="panels" id="panels"></div>
+<script>
+const DATA = /*DATA*/null;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+document.getElementById('title').textContent = DATA.title;
+const T = DATA.runs[0].frames.length, scrub = document.getElementById('scrub'); scrub.max = T - 1;
+const panels = DATA.runs.map(run => {
+  const el = document.createElement('div'); el.className = 'panel';
+  el.innerHTML = `<h2><span>${run.policy}</span><span>${run.metrics.jobs_completed} jobs</span></h2><canvas></canvas><div class="stats"></div>`;
+  document.getElementById('panels').appendChild(el);
+  const g = run.layout, H = g.length, W = g[0].length, cv = el.querySelector('canvas'), S = 12;
+  cv.width = W * S; cv.height = H * S;
+  return {run, cv, ctx: cv.getContext('2d'), H, W, S, stats: el.querySelector('.stats')};
+});
+function draw(t) {
+  for (const p of panels) {
+    const {ctx, run, H, W, S} = p, g = run.layout;
+    ctx.fillStyle = css('--card'); ctx.fillRect(0, 0, W * S, H * S);
+    for (let r = 0; r < H; r++) for (let c = 0; c < W; c++) if (g[r][c]) {
+      ctx.fillStyle = g[r][c] === 1 ? css('--shelf') : css('--wall'); ctx.fillRect(c * S, r * S, S, S); }
+    ctx.fillStyle = css('--station');
+    for (const s of run.stations) ctx.fillRect((s % W) * S, Math.floor(s / W) * S, S, S);
+    ctx.fillStyle = css('--block');
+    for (const e of run.events) if (e.kind === 'block' && t >= e.t && t < e.t + e.duration)
+      for (const c of e.cells) ctx.fillRect((c % W) * S + 2, Math.floor(c / W) * S + 2, S - 4, S - 4);
+    const prev = run.frames[Math.max(0, t - 1)], cur = run.frames[t];
+    cur.forEach((cell, i) => {
+      const failed = cell < 0, c = failed ? -1 - cell : cell;
+      ctx.fillStyle = failed ? css('--failed') : (prev[i] !== cell ? css('--loaded') : css('--robot'));
+      ctx.beginPath(); ctx.arc((c % W) * S + S / 2, Math.floor(c / W) * S + S / 2, S * 0.38, 0, 7); ctx.fill();
+    });
+    let done = 0; while (done < run.done_at.length && run.done_at[done] <= t) done++;
+    const m = run.metrics;
+    p.stats.innerHTML = `<span>completed by now <b>${done}</b></span><span>p95 cycle <b>${m.cycle_p95}</b></span>` +
+      `<span>urgent missed <b>${m.urgent_missed}</b></span><span>stuck episodes <b>${m.stuck_episodes}</b></span><span>collisions <b>${m.collisions}</b></span>`;
+  }
+  document.getElementById('t').textContent = `t = ${t} / ${T - 1}`; scrub.value = t;
+}
+let t = 0, playing = true, acc = 0, last = performance.now();
+function loop(now) { if (playing) { acc += (now - last) * document.getElementById('speed').value / 1000 * 4;
+  while (acc >= 1) { t = Math.min(T - 1, t + 1); acc -= 1; } draw(t); if (t === T - 1) playing = false; }
+  last = now; requestAnimationFrame(loop); }
+document.getElementById('play').onclick = e => { playing = !playing; if (playing && t === T - 1) t = 0; e.target.textContent = playing ? 'Pause' : 'Play'; };
+scrub.oninput = () => { t = +scrub.value; draw(t); };
+draw(0); requestAnimationFrame(loop);
+</script></body></html>
