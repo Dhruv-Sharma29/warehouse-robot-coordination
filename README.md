@@ -31,7 +31,7 @@ flowchart LR
     SIM --> VIZ[HTML replays]
 ```
 
-Rules, recovery behaviour and design decisions: [docs/architecture.md](docs/architecture.md).
+Rules, recovery behaviour and design decisions: [docs/01-architecture.md](docs/01-architecture.md).
 Brief: [SPEC.md](SPEC.md) · Plan and progress: [PLAN.md](PLAN.md)
 
 ## Answer to the research question (2026-10-06)
@@ -177,5 +177,21 @@ Memory and per-step details for a 16 GB Mac are in the portfolio's `RUN_ON_MAC_M
 - One fault mix per scenario (2 blocked segments, 1 robot failure). Severity was not swept.
 - The optional systems extension (serving the predictor remotely with injected latency and a safe
   fallback) is not done.
+
+## Docs
+
+Start with [start.md](start.md) to run it. The design record is in [docs/](docs/README.md):
+
+| # | Doc | What it settles |
+| --- | --- | --- |
+| 00 | [Charter](docs/00-charter.md) | Question, scope, success criteria |
+| 01 | [Architecture](docs/01-architecture.md) | Step loop, design rules, components |
+| 02 | [Coordination](docs/02-coordination.md) | Rolling WHCA*, safety layer, faults, scaling |
+| 03 | [Cost estimators](docs/03-estimators.md) | Heuristic vs learned, features, splits, accuracy |
+| 04 | [Evaluation](docs/04-evaluation.md) | Paired design, statistics, all closed-loop results |
+| 05 | [Risks](docs/05-risks.md) | Thesis risks, claim hygiene |
+| 06 | [Roadmap](docs/06-roadmap.md) | Milestone status, next experiments |
+| 07 | [Learning checklist](docs/07-learning-checklist.md) | Skills per milestone, interview points |
+| 08 | [Implementation notes](docs/08-implementation-notes.md) | Where the code departs from the plan |
 
 Part of a six-project engineering portfolio.
