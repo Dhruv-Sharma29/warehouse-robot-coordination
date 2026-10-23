@@ -1,0 +1,795 @@
+{
+ "scenarios": [
+  [
+   "long-7x8-2st",
+   1,
+   20,
+   "moderate"
+  ],
+  [
+   "long-7x8-2st",
+   2,
+   20,
+   "moderate"
+  ],
+  [
+   "long-7x8-2st",
+   3,
+   20,
+   "moderate"
+  ],
+  [
+   "long-7x8-2st",
+   4,
+   20,
+   "moderate"
+  ],
+  [
+   "long-7x8-2st",
+   5,
+   20,
+   "moderate"
+  ],
+  [
+   "long-7x8-2st",
+   1,
+   20,
+   "saturated"
+  ],
+  [
+   "long-7x8-2st",
+   2,
+   20,
+   "saturated"
+  ],
+  [
+   "long-7x8-2st",
+   3,
+   20,
+   "saturated"
+  ],
+  [
+   "long-7x8-2st",
+   4,
+   20,
+   "saturated"
+  ],
+  [
+   "long-7x8-2st",
+   5,
+   20,
+   "saturated"
+  ],
+  [
+   "wide-10x5",
+   1,
+   20,
+   "moderate"
+  ],
+  [
+   "wide-10x5",
+   2,
+   20,
+   "moderate"
+  ],
+  [
+   "wide-10x5",
+   3,
+   20,
+   "moderate"
+  ],
+  [
+   "wide-10x5",
+   4,
+   20,
+   "moderate"
+  ],
+  [
+   "wide-10x5",
+   5,
+   20,
+   "moderate"
+  ],
+  [
+   "wide-10x5",
+   1,
+   20,
+   "saturated"
+  ],
+  [
+   "wide-10x5",
+   2,
+   20,
+   "saturated"
+  ],
+  [
+   "wide-10x5",
+   3,
+   20,
+   "saturated"
+  ],
+  [
+   "wide-10x5",
+   4,
+   20,
+   "saturated"
+  ],
+  [
+   "wide-10x5",
+   5,
+   20,
+   "saturated"
+  ]
+ ],
+ "model": "results/models/mlp.json",
+ "budget_ms": 100,
+ "circuit": {
+  "trip": 3,
+  "cooldown_calls": 50
+ },
+ "conditions": {
+  "local-mlp": {
+   "runs": [
+    {
+     "jobs_completed": 289,
+     "cycle_mean": 26.6,
+     "collisions": 0,
+     "wall_s": 0.76
+    },
+    {
+     "jobs_completed": 312,
+     "cycle_mean": 32.8,
+     "collisions": 0,
+     "wall_s": 0.76
+    },
+    {
+     "jobs_completed": 293,
+     "cycle_mean": 30.8,
+     "collisions": 0,
+     "wall_s": 0.82
+    },
+    {
+     "jobs_completed": 262,
+     "cycle_mean": 29.5,
+     "collisions": 0,
+     "wall_s": 0.69
+    },
+    {
+     "jobs_completed": 300,
+     "cycle_mean": 27.4,
+     "collisions": 0,
+     "wall_s": 0.8
+    },
+    {
+     "jobs_completed": 530,
+     "cycle_mean": 210.6,
+     "collisions": 0,
+     "wall_s": 1.28
+    },
+    {
+     "jobs_completed": 482,
+     "cycle_mean": 241.7,
+     "collisions": 0,
+     "wall_s": 1.15
+    },
+    {
+     "jobs_completed": 464,
+     "cycle_mean": 230.5,
+     "collisions": 0,
+     "wall_s": 1.26
+    },
+    {
+     "jobs_completed": 459,
+     "cycle_mean": 234.2,
+     "collisions": 0,
+     "wall_s": 1.22
+    },
+    {
+     "jobs_completed": 475,
+     "cycle_mean": 230.9,
+     "collisions": 0,
+     "wall_s": 1.21
+    },
+    {
+     "jobs_completed": 292,
+     "cycle_mean": 24.4,
+     "collisions": 0,
+     "wall_s": 0.95
+    },
+    {
+     "jobs_completed": 291,
+     "cycle_mean": 22.4,
+     "collisions": 0,
+     "wall_s": 0.93
+    },
+    {
+     "jobs_completed": 293,
+     "cycle_mean": 25.6,
+     "collisions": 0,
+     "wall_s": 0.93
+    },
+    {
+     "jobs_completed": 272,
+     "cycle_mean": 21.4,
+     "collisions": 0,
+     "wall_s": 0.94
+    },
+    {
+     "jobs_completed": 307,
+     "cycle_mean": 27.0,
+     "collisions": 0,
+     "wall_s": 1.01
+    },
+    {
+     "jobs_completed": 594,
+     "cycle_mean": 187.6,
+     "collisions": 0,
+     "wall_s": 1.62
+    },
+    {
+     "jobs_completed": 670,
+     "cycle_mean": 160.5,
+     "collisions": 0,
+     "wall_s": 1.54
+    },
+    {
+     "jobs_completed": 592,
+     "cycle_mean": 189.1,
+     "collisions": 0,
+     "wall_s": 1.53
+    },
+    {
+     "jobs_completed": 641,
+     "cycle_mean": 163.7,
+     "collisions": 0,
+     "wall_s": 1.67
+    },
+    {
+     "jobs_completed": 585,
+     "cycle_mean": 196.7,
+     "collisions": 0,
+     "wall_s": 1.62
+    }
+   ],
+   "jobs_completed_mean": 420.15,
+   "collisions": 0,
+   "wall_s_mean": 1.13
+  },
+  "heuristic": {
+   "runs": [
+    {
+     "jobs_completed": 288,
+     "cycle_mean": 26.4,
+     "collisions": 0,
+     "wall_s": 0.72
+    },
+    {
+     "jobs_completed": 311,
+     "cycle_mean": 33.8,
+     "collisions": 0,
+     "wall_s": 0.78
+    },
+    {
+     "jobs_completed": 293,
+     "cycle_mean": 30.6,
+     "collisions": 0,
+     "wall_s": 0.72
+    },
+    {
+     "jobs_completed": 262,
+     "cycle_mean": 31.3,
+     "collisions": 0,
+     "wall_s": 0.69
+    },
+    {
+     "jobs_completed": 300,
+     "cycle_mean": 29.5,
+     "collisions": 0,
+     "wall_s": 0.75
+    },
+    {
+     "jobs_completed": 524,
+     "cycle_mean": 214.0,
+     "collisions": 0,
+     "wall_s": 1.22
+    },
+    {
+     "jobs_completed": 488,
+     "cycle_mean": 239.1,
+     "collisions": 0,
+     "wall_s": 1.13
+    },
+    {
+     "jobs_completed": 496,
+     "cycle_mean": 218.5,
+     "collisions": 0,
+     "wall_s": 1.21
+    },
+    {
+     "jobs_completed": 475,
+     "cycle_mean": 231.7,
+     "collisions": 0,
+     "wall_s": 1.16
+    },
+    {
+     "jobs_completed": 493,
+     "cycle_mean": 236.2,
+     "collisions": 0,
+     "wall_s": 1.2
+    },
+    {
+     "jobs_completed": 290,
+     "cycle_mean": 26.1,
+     "collisions": 0,
+     "wall_s": 0.91
+    },
+    {
+     "jobs_completed": 292,
+     "cycle_mean": 23.6,
+     "collisions": 0,
+     "wall_s": 0.89
+    },
+    {
+     "jobs_completed": 294,
+     "cycle_mean": 26.6,
+     "collisions": 0,
+     "wall_s": 0.87
+    },
+    {
+     "jobs_completed": 272,
+     "cycle_mean": 22.5,
+     "collisions": 0,
+     "wall_s": 0.9
+    },
+    {
+     "jobs_completed": 304,
+     "cycle_mean": 27.3,
+     "collisions": 0,
+     "wall_s": 0.96
+    },
+    {
+     "jobs_completed": 588,
+     "cycle_mean": 188.3,
+     "collisions": 0,
+     "wall_s": 1.54
+    },
+    {
+     "jobs_completed": 644,
+     "cycle_mean": 173.3,
+     "collisions": 0,
+     "wall_s": 1.51
+    },
+    {
+     "jobs_completed": 590,
+     "cycle_mean": 192.5,
+     "collisions": 0,
+     "wall_s": 1.5
+    },
+    {
+     "jobs_completed": 608,
+     "cycle_mean": 175.6,
+     "collisions": 0,
+     "wall_s": 1.55
+    },
+    {
+     "jobs_completed": 579,
+     "cycle_mean": 196.3,
+     "collisions": 0,
+     "wall_s": 1.57
+    }
+   ],
+   "jobs_completed_mean": 419.55,
+   "collisions": 0,
+   "wall_s_mean": 1.09
+  },
+  "remote": {
+   "latency_ms": 0.0,
+   "drop_rate": 0.0,
+   "runs": [
+    {
+     "jobs_completed": 289,
+     "cycle_mean": 26.6,
+     "collisions": 0,
+     "wall_s": 1.13
+    },
+    {
+     "jobs_completed": 312,
+     "cycle_mean": 32.8,
+     "collisions": 0,
+     "wall_s": 1.14
+    },
+    {
+     "jobs_completed": 293,
+     "cycle_mean": 30.8,
+     "collisions": 0,
+     "wall_s": 1.2
+    },
+    {
+     "jobs_completed": 262,
+     "cycle_mean": 29.5,
+     "collisions": 0,
+     "wall_s": 1.02
+    },
+    {
+     "jobs_completed": 300,
+     "cycle_mean": 27.4,
+     "collisions": 0,
+     "wall_s": 1.19
+    },
+    {
+     "jobs_completed": 530,
+     "cycle_mean": 210.6,
+     "collisions": 0,
+     "wall_s": 1.88
+    },
+    {
+     "jobs_completed": 482,
+     "cycle_mean": 241.7,
+     "collisions": 0,
+     "wall_s": 1.83
+    },
+    {
+     "jobs_completed": 464,
+     "cycle_mean": 230.5,
+     "collisions": 0,
+     "wall_s": 2.03
+    },
+    {
+     "jobs_completed": 459,
+     "cycle_mean": 234.2,
+     "collisions": 0,
+     "wall_s": 1.88
+    },
+    {
+     "jobs_completed": 475,
+     "cycle_mean": 230.9,
+     "collisions": 0,
+     "wall_s": 1.94
+    },
+    {
+     "jobs_completed": 292,
+     "cycle_mean": 24.4,
+     "collisions": 0,
+     "wall_s": 1.38
+    },
+    {
+     "jobs_completed": 291,
+     "cycle_mean": 22.4,
+     "collisions": 0,
+     "wall_s": 1.29
+    },
+    {
+     "jobs_completed": 293,
+     "cycle_mean": 25.6,
+     "collisions": 0,
+     "wall_s": 1.33
+    },
+    {
+     "jobs_completed": 272,
+     "cycle_mean": 21.4,
+     "collisions": 0,
+     "wall_s": 1.32
+    },
+    {
+     "jobs_completed": 307,
+     "cycle_mean": 27.0,
+     "collisions": 0,
+     "wall_s": 1.4
+    },
+    {
+     "jobs_completed": 594,
+     "cycle_mean": 187.6,
+     "collisions": 0,
+     "wall_s": 2.29
+    },
+    {
+     "jobs_completed": 670,
+     "cycle_mean": 160.5,
+     "collisions": 0,
+     "wall_s": 2.3
+    },
+    {
+     "jobs_completed": 592,
+     "cycle_mean": 189.1,
+     "collisions": 0,
+     "wall_s": 2.21
+    },
+    {
+     "jobs_completed": 641,
+     "cycle_mean": 163.7,
+     "collisions": 0,
+     "wall_s": 2.45
+    },
+    {
+     "jobs_completed": 585,
+     "cycle_mean": 196.7,
+     "collisions": 0,
+     "wall_s": 2.32
+    }
+   ],
+   "calls": {
+    "remote": 15722,
+    "fallback": 0,
+    "failed_calls": 0,
+    "circuit_opened": 0
+   },
+   "fallback_share": 0.0,
+   "jobs_completed_mean": 420.15,
+   "collisions": 0,
+   "wall_s_mean": 1.68
+  },
+  "remote-slow": {
+   "latency_ms": 250.0,
+   "drop_rate": 0.0,
+   "runs": [
+    {
+     "jobs_completed": 288,
+     "cycle_mean": 26.4,
+     "collisions": 0,
+     "wall_s": 4.08
+    },
+    {
+     "jobs_completed": 311,
+     "cycle_mean": 33.8,
+     "collisions": 0,
+     "wall_s": 4.45
+    },
+    {
+     "jobs_completed": 293,
+     "cycle_mean": 30.6,
+     "collisions": 0,
+     "wall_s": 4.08
+    },
+    {
+     "jobs_completed": 262,
+     "cycle_mean": 31.3,
+     "collisions": 0,
+     "wall_s": 3.74
+    },
+    {
+     "jobs_completed": 300,
+     "cycle_mean": 29.5,
+     "collisions": 0,
+     "wall_s": 4.11
+    },
+    {
+     "jobs_completed": 524,
+     "cycle_mean": 214.0,
+     "collisions": 0,
+     "wall_s": 7.02
+    },
+    {
+     "jobs_completed": 488,
+     "cycle_mean": 239.1,
+     "collisions": 0,
+     "wall_s": 6.62
+    },
+    {
+     "jobs_completed": 496,
+     "cycle_mean": 218.5,
+     "collisions": 0,
+     "wall_s": 6.69
+    },
+    {
+     "jobs_completed": 475,
+     "cycle_mean": 231.7,
+     "collisions": 0,
+     "wall_s": 6.65
+    },
+    {
+     "jobs_completed": 493,
+     "cycle_mean": 236.2,
+     "collisions": 0,
+     "wall_s": 6.68
+    },
+    {
+     "jobs_completed": 290,
+     "cycle_mean": 26.1,
+     "collisions": 0,
+     "wall_s": 4.27
+    },
+    {
+     "jobs_completed": 292,
+     "cycle_mean": 23.6,
+     "collisions": 0,
+     "wall_s": 4.27
+    },
+    {
+     "jobs_completed": 294,
+     "cycle_mean": 26.6,
+     "collisions": 0,
+     "wall_s": 4.27
+    },
+    {
+     "jobs_completed": 272,
+     "cycle_mean": 22.5,
+     "collisions": 0,
+     "wall_s": 3.96
+    },
+    {
+     "jobs_completed": 304,
+     "cycle_mean": 27.3,
+     "collisions": 0,
+     "wall_s": 4.64
+    },
+    {
+     "jobs_completed": 588,
+     "cycle_mean": 188.3,
+     "collisions": 0,
+     "wall_s": 7.97
+    },
+    {
+     "jobs_completed": 644,
+     "cycle_mean": 173.3,
+     "collisions": 0,
+     "wall_s": 8.54
+    },
+    {
+     "jobs_completed": 590,
+     "cycle_mean": 192.5,
+     "collisions": 0,
+     "wall_s": 7.71
+    },
+    {
+     "jobs_completed": 608,
+     "cycle_mean": 175.6,
+     "collisions": 0,
+     "wall_s": 7.96
+    },
+    {
+     "jobs_completed": 579,
+     "cycle_mean": 196.3,
+     "collisions": 0,
+     "wall_s": 7.66
+    }
+   ],
+   "calls": {
+    "remote": 0,
+    "fallback": 15689,
+    "failed_calls": 919,
+    "circuit_opened": 306
+   },
+   "fallback_share": 1.0,
+   "jobs_completed_mean": 419.55,
+   "collisions": 0,
+   "wall_s_mean": 5.77
+  },
+  "remote-lossy": {
+   "latency_ms": 0.0,
+   "drop_rate": 0.2,
+   "runs": [
+    {
+     "jobs_completed": 289,
+     "cycle_mean": 26.3,
+     "collisions": 0,
+     "wall_s": 1.06
+    },
+    {
+     "jobs_completed": 253,
+     "cycle_mean": 46.2,
+     "collisions": 0,
+     "wall_s": 1.03
+    },
+    {
+     "jobs_completed": 274,
+     "cycle_mean": 36.6,
+     "collisions": 0,
+     "wall_s": 1.04
+    },
+    {
+     "jobs_completed": 262,
+     "cycle_mean": 31.5,
+     "collisions": 0,
+     "wall_s": 0.96
+    },
+    {
+     "jobs_completed": 301,
+     "cycle_mean": 28.4,
+     "collisions": 0,
+     "wall_s": 1.06
+    },
+    {
+     "jobs_completed": 529,
+     "cycle_mean": 216.7,
+     "collisions": 0,
+     "wall_s": 1.77
+    },
+    {
+     "jobs_completed": 366,
+     "cycle_mean": 173.3,
+     "collisions": 0,
+     "wall_s": 1.61
+    },
+    {
+     "jobs_completed": 480,
+     "cycle_mean": 229.2,
+     "collisions": 0,
+     "wall_s": 1.75
+    },
+    {
+     "jobs_completed": 398,
+     "cycle_mean": 225.9,
+     "collisions": 0,
+     "wall_s": 1.6
+    },
+    {
+     "jobs_completed": 503,
+     "cycle_mean": 240.7,
+     "collisions": 0,
+     "wall_s": 1.78
+    },
+    {
+     "jobs_completed": 291,
+     "cycle_mean": 24.9,
+     "collisions": 0,
+     "wall_s": 1.3
+    },
+    {
+     "jobs_completed": 292,
+     "cycle_mean": 23.3,
+     "collisions": 0,
+     "wall_s": 1.2
+    },
+    {
+     "jobs_completed": 296,
+     "cycle_mean": 24.9,
+     "collisions": 0,
+     "wall_s": 1.34
+    },
+    {
+     "jobs_completed": 271,
+     "cycle_mean": 21.6,
+     "collisions": 0,
+     "wall_s": 1.25
+    },
+    {
+     "jobs_completed": 306,
+     "cycle_mean": 26.5,
+     "collisions": 0,
+     "wall_s": 1.32
+    },
+    {
+     "jobs_completed": 579,
+     "cycle_mean": 188.3,
+     "collisions": 0,
+     "wall_s": 2.16
+    },
+    {
+     "jobs_completed": 647,
+     "cycle_mean": 173.5,
+     "collisions": 0,
+     "wall_s": 2.19
+    },
+    {
+     "jobs_completed": 584,
+     "cycle_mean": 192.7,
+     "collisions": 0,
+     "wall_s": 2.07
+    },
+    {
+     "jobs_completed": 629,
+     "cycle_mean": 164.8,
+     "collisions": 0,
+     "wall_s": 2.33
+    },
+    {
+     "jobs_completed": 579,
+     "cycle_mean": 198.1,
+     "collisions": 0,
+     "wall_s": 2.1
+    }
+   ],
+   "calls": {
+    "remote": 9468,
+    "fallback": 5812,
+    "failed_calls": 2346,
+    "circuit_opened": 72
+   },
+   "fallback_share": 0.38,
+   "jobs_completed_mean": 406.45,
+   "collisions": 0,
+   "wall_s_mean": 1.55
+  }
+ },
+ "remote_matches_local": true
+}
