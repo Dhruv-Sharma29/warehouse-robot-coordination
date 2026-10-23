@@ -1,8 +1,8 @@
 # 06 — Roadmap
 
 Milestones are PLAN.md's. The Progress table in PLAN.md (dated 2026-10-06) is the status of
-record; the `[ ]` checkboxes under each milestone in PLAN.md were never ticked and do not reflect
-progress.
+record; PLAN.md's checkboxes were ticked on 2026-10-23 to match it (only the optional remote-predictor
+item is open).
 
 ## Milestones
 

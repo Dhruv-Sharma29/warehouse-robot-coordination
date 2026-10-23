@@ -50,8 +50,7 @@ The tuning grid (`results/summary/heuristic_tuning.json`): 4 × 4 values of
 | 4 | 485.8 | 569.8 | 574.1 | 564.8 |
 
 The queue term alone (`0,0 → 0,3`) moves throughput from 373 to 565. Once `per_queued > 0`, the
-grid spans 529.9–576.4, so the chosen point is not a knife-edge. (The README's "553–576" leaves
-out the 529.9 cell; the JSON is the source.) The tuning never touches held-out layouts.
+grid spans 529.9–576.4, so the chosen point is not a knife-edge. The tuning never touches held-out layouts.
 
 ## Splits
 

@@ -114,11 +114,15 @@ Held-out families never reach training data (enforced by a test).
 
 - **Naive station choice loses most of the throughput.** Sending each loaded robot to its nearest
   station creates queues. The heuristic's queue term alone takes training-layout throughput from
-  373 to 565 jobs. The tuning grid is flat beyond that (553–576), so it isn't fragile.
+  373 to 565 jobs. With the queue term on, every cell of the tuning grid lands between 530 and 576 jobs
+  (`results/summary/heuristic_tuning.json`), so it isn't fragile.
 - **The first router was sloppy.** It cleared all reservations each round, needed ~430 safety-layer
   interventions per run, and finished 606 jobs. Rolling replanning (each robot replans around
-  everyone's still-valid plans) gave **0 interventions and 749 jobs (+24%)**. All data, models and
-  comparisons were redone on the improved router (`results/superseded_clear_router/`).
+  everyone's still-valid plans) gave **0 interventions and 749 jobs (+24%)** in that ablation on
+  training layouts (`results/summary/router_ablation.json`). On held-out layouts the safety layer
+  still steps in, 2.9–93.9 times per run on average depending on policy and load
+  (`results/summary/compare_heldout.json`), with 0 collisions in every raw run. All data, models
+  and comparisons were redone on the improved router (`results/superseded_clear_router/`).
 
 ### Scaling (XL layout, saturated, tuned heuristic)
 
@@ -145,7 +149,7 @@ lanes) would be the next step.
 uv venv --system-site-packages --python /usr/bin/python3 && uv sync   # numpy/scipy/torch from the host
 uv run pytest                                      # 15 tests: collision rules, recovery, determinism, stats, leakage
 uv run python -m runner.experiment router-ablation # clear vs rolling WHCA*
-uv run python -m predictor.dataset                 # trips from training layouts (~40 s, 10 workers)
+uv run python -m predictor.dataset                 # trips from training layouts (~40 s, 8 workers by default)
 uv run python -m predictor.train                   # distance / ridge / MLP accuracy
 uv run python -m runner.experiment tune-heuristic  # heuristic weights on training layouts
 uv run python -m runner.experiment compare         # 80 held-out scenarios x 4 policies (~1 min)

@@ -6,7 +6,7 @@ Brief: [SPEC.md](SPEC.md). Research question:
 
 Simulation study only — not a DeepFleet reproduction or a real-robot safety claim.
 
-## Progress (2026-10-06)
+## Progress (2026-10-06; checkboxes ticked 2026-10-23 to match)
 
 | Milestone | State |
 | --- | --- |
@@ -43,34 +43,34 @@ method for 100+ robots.
 ## Milestones
 
 ### M1 — Simulator correctness (1–2 weeks)
-- [ ] Discrete time steps; 4-connected moves + wait.
-- [ ] Explicit **vertex** and **edge-swap** collision detection (tests for both).
-- [ ] Jobs: pickup → drop-off; completion rules; impossible jobs reported, not hung.
-- [ ] Seeded determinism test: same seed → identical trajectory hash.
+- [x] Discrete time steps; 4-connected moves + wait.
+- [x] Explicit **vertex** and **edge-swap** collision detection (tests for both).
+- [x] Jobs: pickup → drop-off; completion rules; impossible jobs reported, not hung.
+- [x] Seeded determinism test: same seed → identical trajectory hash.
 
 ### M2 — Classical baseline (1–2 weeks)
-- [ ] Space-time A* with reservation table, priority ordering; assignment policy.
-- [ ] Deadlock detection + resolution rule; count deadlocks as a metric.
-- [ ] Blocked aisle → replan without corrupting reservations. Failed robot → documented recovery (occupancy kept as obstacle, jobs reassigned).
-- [ ] Scale 20 → 100 robots; record planner compute time.
+- [x] Space-time A* with reservation table, priority ordering; assignment policy.
+- [x] Deadlock detection + resolution rule; count deadlocks as a metric.
+- [x] Blocked aisle → replan without corrupting reservations. Failed robot → documented recovery (occupancy kept as obstacle, jobs reassigned).
+- [x] Scale 20 → 100 robots; record planner compute time.
 
 ### M3 — Data collection (1 week)
-- [ ] Generate trajectories over varied layouts/traffic/faults.
-- [ ] Split by **layout** and seed **before** generation; automated check that held-out layouts never appear in training data or caches.
+- [x] Generate trajectories over varied layouts/traffic/faults.
+- [x] Split by **layout** and seed **before** generation; automated check that held-out layouts never appear in training data or caches.
 
 ### M4 — Learned prediction (1–2 weeks)
-- [ ] Target: route travel time or local congestion. Start with a simple supervised model. GNN only if simple model plateaus.
-- [ ] Report prediction error **and** move on — it's not the headline metric.
+- [x] Target: route travel time or local congestion. Start with a simple supervised model. GNN only if simple model plateaus.
+- [x] Report prediction error **and** move on — it's not the headline metric.
 
 ### M5 — Planner integration (1–2 weeks)
-- [ ] Predictions modify edge costs or assignment; collision checking unchanged.
-- [ ] Paired comparison (same layout, orders, fleet size, faults, seeds): baseline vs heuristic vs learned.
-- [ ] Equal observation access and comparable planning budget.
+- [x] Predictions modify edge costs or assignment; collision checking unchanged.
+- [x] Paired comparison (same layout, orders, fleet size, faults, seeds): baseline vs heuristic vs learned.
+- [x] Equal observation access and comparable planning budget.
 
 ### M6 — Generalization + demo (1 week)
-- [ ] Unseen layouts, higher load, urgent jobs, blocked aisles, failed robots.
-- [ ] Side-by-side browser replay.
-- [ ] Optional: serve predictor via 01 gateway; inject latency/drops; deterministic fallback.
+- [x] Unseen layouts, higher load, urgent jobs, blocked aisles, failed robots.
+- [x] Side-by-side browser replay.
+- [ ] Optional: serve predictor via 01 gateway; inject latency/drops; deterministic fallback. (Not done: [docs/06](docs/06-roadmap.md).)
 
 ## Metrics
 Orders completed per interval · mean/p95 travel time · total path cost · collisions (must be 0) · deadlocks · urgent-job delay · planner compute time. Multiple seeds; report variability (e.g. mean ± CI over seeds).
@@ -80,4 +80,4 @@ Orders completed per interval · mean/p95 travel time · total path cost · coll
 - Learned costs can cause oscillation (everyone avoids the same "congested" aisle). Watch for it.
 
 ## Definition of done
-- [ ] Simulator tests · [ ] fair paired comparisons · [ ] unseen-layout results · [ ] failure cases · [ ] visualization · [ ] limitations section (physics, sensing, traffic realism)
+- [x] Simulator tests · [x] fair paired comparisons · [x] unseen-layout results · [x] failure cases · [x] visualization · [x] limitations section (physics, sensing, traffic realism)
