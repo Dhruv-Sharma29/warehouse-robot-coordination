@@ -1,0 +1,22 @@
+[project]
+name = "warehouse-fleet"
+version = "0.1.0"
+description = "Warehouse robot coordination simulator: classical vs learned congestion-aware planning (portfolio project 06)"
+requires-python = ">=3.12,<3.13"
+# numpy, scipy, scikit-learn and torch come from the host's system site-packages (NVIDIA aarch64
+# torch build); versions are recorded in env/ENVIRONMENT.md. See README for why.
+dependencies = []
+
+[project.optional-dependencies]
+# macOS / any machine without the GX10's system packages: `uv sync --extra standalone`
+standalone = ["numpy>=1.26", "scipy>=1.11", "scikit-learn>=1.4", "torch>=2.4"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.uv]
+package = false
